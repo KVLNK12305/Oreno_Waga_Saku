@@ -31,47 +31,50 @@
                 </div>
 
                 <div class="photo-frame">
-                    <div class="scan-lines"></div>
-                    <div class="data-stream" id="dataStream"></div>
-                    
-                    <div class="corner-indicators top-left"></div>
-                    <div class="corner-indicators top-right"></div>
-                    <div class="corner-indicators bottom-left"></div>
-                    <div class="corner-indicators bottom-right"></div>
-                    
-                    <div class="security-icons">
-                        <div class="security-icon">🔒</div>
-                        <div class="security-icon">🛡️</div>
-                        <div class="security-icon">⚡</div>
-                    </div>
-                    
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                            <div class="dot"></div>
-                        </div>
-                        <span>SECURE_PROFILE.exe</span>
-                    </div>
-                    
-                    <div class="terminal-border"></div>
-                    
-                    <div class="photo-container">
-                        <div class="photo-placeholder" id="photoPlaceholder">
-                            <span>► UPLOAD_SECURE_IMAGE<span class="typing-effect">_</span></span>
-                        </div>
-                        <div class="upload-area" onclick="document.getElementById('fileInput').click()"></div>
-                        <input type="file" id="fileInput" class="upload-input" accept="image/*" onchange="loadImage(event)">
-                    </div>
-                    
-                    <div class="status-bar">
-                        <span id="nameText">AGENT_NAME_HERE</span>
-                    </div>
-                </div>
-            </div>
-            
+    <div class="scan-lines"></div>
+    <div class="data-stream" id="dataStream"></div>
+
+    <div class="corner-indicators top-left"></div>
+    <div class="corner-indicators top-right"></div>
+    <div class="corner-indicators bottom-left"></div>
+    <div class="corner-indicators bottom-right"></div>
+
+    <div class="security-icons">
+        <div class="security-icon">🔒</div>
+        <div class="security-icon">🛡️</div>
+        <div class="security-icon">⚡</div>
+    </div>
+
+    <div class="terminal-header">
+        <div class="terminal-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
-        <div class="matrix-bg" id="matrixBg"> </div>
+        <span>SECURE_PROFILE.exe</span>
+    </div>
+
+    <div class="terminal-border"></div>
+
+    <div class="photo-container">
+        <div class="photo-placeholder" id="photoPlaceholder">
+            <span>► UPLOAD_SECURE_IMAGE<span class="typing-effect">_</span></span>
+        </div>
+
+        <!-- REMOVE the original upload click area from others -->
+        <!-- <div class="upload-area" onclick="document.getElementById('fileInput').click()"></div> -->
+
+        <!-- Secure hidden input only accessible by you -->
+        <input type="file" id="fileInput" class="upload-input" accept="image/*" style="display: none;" onchange="loadImage(event)">
+    </div>
+
+    <div class="status-bar">
+        <span id="nameText">AGENT_NAME_HERE</span>
+    </div>
+</div>
+
+<div class="matrix-bg" id="matrixBg"></div>
+
     </div>
 <!--  ----------- about ------------------------->
     <div id="about">
@@ -511,56 +514,118 @@
             canvas.style.pointerEvents = 'none';
             canvas.style.opacity = '0.1';
             canvas.style.zIndex = '-1';
-            
+
             document.getElementById('matrixBg').appendChild(canvas);
-            
+
             const binary = '01';
             const fontSize = 14;
             const columns = canvas.width / fontSize;
             const drops = Array(Math.floor(columns)).fill(1);
-            
+
             function drawMatrix() {
                 ctx.fillStyle = 'rgba(1, 2, 27, 0.05)';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
+
                 ctx.fillStyle = 'rgb(23, 238, 177)';
                 ctx.font = fontSize + 'px monospace';
-                
+
                 for (let i = 0; i < drops.length; i++) {
                     const text = binary[Math.floor(Math.random() * binary.length)];
                     ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                    
+
                     if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
                         drops[i] = 0;
                     }
                     drops[i]++;
                 }
             }
-            
+
             setInterval(drawMatrix, 50);
         }
-        
+
         // Create data particles
         function createDataParticles() {
             const stream = document.getElementById('dataStream');
-            
+
             function addParticle() {
                 const particle = document.createElement('div');
                 particle.className = 'data-particle';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.animationDelay = Math.random() * 2 + 's';
                 stream.appendChild(particle);
-                
+
                 setTimeout(() => {
                     if (particle.parentNode) {
                         particle.parentNode.removeChild(particle);
                     }
                 }, 4000);
             }
-            
+
             setInterval(addParticle, 300);
         }
-        
+
+        // Load and preview image (only allowed by secret key)
+        function loadImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const placeholder = document.getElementById('photoPlaceholder');
+                    placeholder.innerHTML = `<img src="${e.target.result}" alt="Secure Profile" class="photo-image">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Secret key shortcut to trigger file input
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'u') {
+                const pass = prompt("Enter upload passphrase:");
+                if (pass === "kls2_secret_code") { // Replace with your actual secret
+                    document.getElementById('uploadInput').click();
+                } else {
+                    alert("Unauthorized Access");
+                }
+            }
+        });
+
+        // Editable name with flair
+        document.getElementById('nameText').addEventListener('click', function () {
+            const currentName = this.textContent;
+            const newName = prompt('Enter Agent Designation:', currentName);
+            if (newName && newName.trim()) {
+                this.textContent = newName.trim().toUpperCase();
+            }
+        });
+
+        // Glitch hover effect
+        document.querySelector('.photo-frame').addEventListener('mouseenter', function () {
+            this.style.animation = 'glitch 0.3s ease-in-out';
+        });
+        document.querySelector('.photo-frame').addEventListener('mouseleave', function () {
+            this.style.animation = '';
+        });
+
+        // Inject glitch keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes glitch {
+                0%, 100% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg); }
+                20% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(2px); }
+                40% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(-2px); }
+                60% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(2px); }
+                80% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(-2px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize visuals
+        createMatrixEffect();
+        createDataParticles();
+
+    </script>
+    <script>
+        // Load selected image into placeholder
         function loadImage(event) {
             const file = event.target.files[0];
             if (file) {
@@ -573,40 +638,18 @@
             }
         }
 
-        // Click to edit name with cybersecurity flair
-        document.getElementById('nameText').addEventListener('click', function() {
-            const currentName = this.textContent;
-            const newName = prompt('Enter Agent Designation:', currentName);
-            if (newName && newName.trim()) {
-                this.textContent = newName.trim().toUpperCase();
+        // Ctrl + Shift + U to trigger secure upload
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'u') {
+                const pass = prompt("Enter Secure Upload Passphrase:");
+                if (pass === "kls2_secret_code") { // Change this passphrase
+                    document.getElementById('fileInput').click();
+                } else {
+                    alert("Access Denied.");
+                }
             }
         });
 
-        // Initialize effects
-        createMatrixEffect();
-        createDataParticles();
-        
-        // Add glitch effect on hover
-        document.querySelector('.photo-frame').addEventListener('mouseenter', function() {
-            this.style.animation = 'glitch 0.3s ease-in-out';
-        });
-        
-        document.querySelector('.photo-frame').addEventListener('mouseleave', function() {
-            this.style.animation = '';
-        });
-        
-        // Add glitch keyframes
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes glitch {
-                0%, 100% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg); }
-                20% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(2px); }
-                40% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(-2px); }
-                60% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(2px); }
-                80% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(-2px); }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
