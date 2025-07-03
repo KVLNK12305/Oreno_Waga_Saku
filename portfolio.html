@@ -23,52 +23,55 @@
                 </ul>
                 <i class="fa-solid fa-bars fa-bounce" id="open" onclick="show()"></i>
             </nav>
-            <div class="header-text">
-                <p>Coder, Student</p>
-                <br>
-                <h1>Hi , I am <span>Narasimha</span> from INDiA</h1> 
+            <div class="hero">
+                <div class="header-text">
+                    <p>Coder, Student</p>
+                    <br>
+                    <h1>Hi , I am <span>Narasimha</span> from INDiA</h1> 
+                </div>
+
+                <div class="photo-frame">
+                    <div class="scan-lines"></div>
+                    <div class="data-stream" id="dataStream"></div>
+                    
+                    <div class="corner-indicators top-left"></div>
+                    <div class="corner-indicators top-right"></div>
+                    <div class="corner-indicators bottom-left"></div>
+                    <div class="corner-indicators bottom-right"></div>
+                    
+                    <div class="security-icons">
+                        <div class="security-icon">🔒</div>
+                        <div class="security-icon">🛡️</div>
+                        <div class="security-icon">⚡</div>
+                    </div>
+                    
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <span>SECURE_PROFILE.exe</span>
+                    </div>
+                    
+                    <div class="terminal-border"></div>
+                    
+                    <div class="photo-container">
+                        <div class="photo-placeholder" id="photoPlaceholder">
+                            <span>► UPLOAD_SECURE_IMAGE<span class="typing-effect">_</span></span>
+                        </div>
+                        <div class="upload-area" onclick="document.getElementById('fileInput').click()"></div>
+                        <input type="file" id="fileInput" class="upload-input" accept="image/*" onchange="loadImage(event)">
+                    </div>
+                    
+                    <div class="status-bar">
+                        <span id="nameText">AGENT_NAME_HERE</span>
+                    </div>
+                </div>
             </div>
+            
         </div>
-        <div class="matrix-bg" id="matrixBg"></div>
-    
-    <div class="photo-frame">
-        <div class="scan-lines"></div>
-        <div class="data-stream" id="dataStream"></div>
-        
-        <div class="corner-indicators top-left"></div>
-        <div class="corner-indicators top-right"></div>
-        <div class="corner-indicators bottom-left"></div>
-        <div class="corner-indicators bottom-right"></div>
-        
-        <div class="security-icons">
-            <div class="security-icon">🔒</div>
-            <div class="security-icon">🛡️</div>
-            <div class="security-icon">⚡</div>
-        </div>
-        
-        <div class="terminal-header">
-            <div class="terminal-dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
-            <span>SECURE_PROFILE.exe</span>
-        </div>
-        
-        <div class="terminal-border"></div>
-        
-        <div class="photo-container">
-            <div class="photo-placeholder" id="photoPlaceholder">
-                <span>► UPLOAD_SECURE_IMAGE<span class="typing-effect">_</span></span>
-            </div>
-            <div class="upload-area" onclick="document.getElementById('fileInput').click()"></div>
-            <input type="file" id="fileInput" class="upload-input" accept="image/*" onchange="loadImage(event)">
-        </div>
-        
-        <div class="status-bar">
-            <span id="nameText">AGENT_NAME_HERE</span>
-        </div>
-    </div>
+        <div class="matrix-bg" id="matrixBg"> </div>
     </div>
 <!--  ----------- about ------------------------->
     <div id="about">
