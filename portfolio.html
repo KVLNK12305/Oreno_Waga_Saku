@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="model.css">
+    <title>Portfolio</title>
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <script src="services.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="logo.png" class="logo">
+                <ul id="menu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" id="cls"onclick="hide()"></i>
+                </ul>
+                <i class="fa-solid fa-bars fa-bounce" id="open" onclick="show()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Coder, Student</p>
+                <br>
+                <h1>Hi , I am <span>Narasimha</span> from INDiA</h1> 
+            </div>
+        </div>
+        <div class="matrix-bg" id="matrixBg"></div>
+    
+    <div class="photo-frame">
+        <div class="scan-lines"></div>
+        <div class="data-stream" id="dataStream"></div>
+        
+        <div class="corner-indicators top-left"></div>
+        <div class="corner-indicators top-right"></div>
+        <div class="corner-indicators bottom-left"></div>
+        <div class="corner-indicators bottom-right"></div>
+        
+        <div class="security-icons">
+            <div class="security-icon">🔒</div>
+            <div class="security-icon">🛡️</div>
+            <div class="security-icon">⚡</div>
+        </div>
+        
+        <div class="terminal-header">
+            <div class="terminal-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <span>SECURE_PROFILE.exe</span>
+        </div>
+        
+        <div class="terminal-border"></div>
+        
+        <div class="photo-container">
+            <div class="photo-placeholder" id="photoPlaceholder">
+                <span>► UPLOAD_SECURE_IMAGE<span class="typing-effect">_</span></span>
+            </div>
+            <div class="upload-area" onclick="document.getElementById('fileInput').click()"></div>
+            <input type="file" id="fileInput" class="upload-input" accept="image/*" onchange="loadImage(event)">
+        </div>
+        
+        <div class="status-bar">
+            <span id="nameText">AGENT_NAME_HERE</span>
+        </div>
+    </div>
+    </div>
+<!--  ----------- about ------------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col2">
+                    <h1 class="sub-title"><span>About Me</span></h1>
+                    <p style="font-size: 25px;">I'm a student who believes in smart-work since hardwork without direction is just cardio. I pursue a strategic approach, exploring multiple sources to craft well-informed solutions. Perfection isn't my goal; delivering high-quality work and improving with every step is.</p>
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span style="font-size: 30px;">UI/UX</span><br>Designing Web interfaces</li>
+                            <li><span style="font-size: 30px;">Coder</span><br>Object-Oriented Programming:<br>Python, Java</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span style="font-size: 30px;">Further More</span><br>Very Soon..</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span style="font-size: 30px;">2023-2027</span><br>Amrita Vishwa Vidyapeetham</li>
+                            <li><span style="font-size: 30px;">2021</span><br>Allen Career Institute</li>
+                            <li><span style="font-size: 30px;">2018-2021</span><br>Narayana E.M High School</li>
+                            <li><span style="font-size: 30px;">2017</span><br>Sai Baba Central School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------Field of expertise----------------------->
+    <br>
+    <!-- portfolio -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title"><span>My Projects</span></h1>
+            <div class="worklist">
+                <div class="work"><img src="" alt=""><div class="layer"><h3>LuxeRide rentals</h3></div></div>
+                <div class="work"><img src="" alt=""></div>
+            </div>
+            <a href="" class="btn">See more</a>
+        </div>
+    </div>
+    <!-- contact-->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title" style="font-family: myFont;">Contact Me</h1>
+                    <p> <i class="fa-sharp fa-solid fa-paper-plane"></i> kls2edmentre@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/narasimha-kushal-kurapati-v-l-729ab4289/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/kvlnkushal_2305/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://twitter.com/KushalKurapati" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.facebook.com/kushal.kurapati.5/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="name" id="name" placeholder="Your Name" required>
+                        <input type="email" name="email" id="email" placeholder="Your Email" required>
+                        <textarea name="message" id="message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="mg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © KLS2.</p>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var meu=document.getElementById("menu") 
+        function show(){
+            meu.style.right="0";
+        }
+        function hide(){
+            meu.style.right="-200px";
+        }
+    </script>
+    <script>
+        // Improved Gemini constellation layout with better alignment
+        const geminiStars = [
+            // Left constellation (Castor) - better geometric alignment
+            { x: 18, y: 15, name: 'Frontend Development', icon: '🎨' },
+            { x: 22, y: 35, name: 'UI/UX Design', icon: '✨' },
+            { x: 16, y: 55, name: 'Web Technologies', icon: '🌐' },
+            { x: 25, y: 75, name: 'JavaScript Frameworks', icon: '⚡' },
+            
+            // Right constellation (Pollux) - mirror alignment
+            { x: 75, y: 20, name: 'Backend Development', icon: '⚙️' },
+            { x: 78, y: 40, name: 'Database Design', icon: '🗄️' },
+            { x: 72, y: 60, name: 'API Development', icon: '🔗' },
+            { x: 82, y: 80, name: 'System Architecture', icon: '🏗️' },
+            
+            // Central bridge stars - perfectly centered
+            { x: 50, y: 25, name: 'Full-Stack Integration', icon: '🔄' },
+            { x: 50, y: 70, name: 'DevOps & Cloud', icon: '☁️' }
+        ];
+
+        // Optimized constellation connections for better visual flow
+        const connections = [
+            [0, 1], [1, 2], [2, 3], // Left constellation chain
+            [4, 5], [5, 6], [6, 7], // Right constellation chain
+            [1, 8], [5, 8], // Connect both sides to top center
+            [2, 9], [6, 9], // Connect both sides to bottom center
+            [8, 9] // Connect center stars
+        ];
+
+        // Expertise details
+        const expertiseData = {
+            'Frontend Development': {
+                description: 'Creating stunning, responsive user interfaces with modern web technologies. Focus on performance, accessibility, and user experience.',
+                skills: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Vue.js', 'Tailwind CSS']
+            },
+            'UI/UX Design': {
+                description: 'Designing intuitive user experiences through research, wireframing, and prototyping. User-centered design approach.',
+                skills: ['Figma', 'Adobe XD', 'Prototyping', 'User Research', 'Wireframing', 'Design Systems']
+            },
+            'Web Technologies': {
+                description: 'Deep expertise in modern web standards and cutting-edge technologies. Building scalable, maintainable applications.',
+                skills: ['Progressive Web Apps', 'WebAssembly', 'Web APIs', 'Service Workers', 'GraphQL']
+            },
+            'JavaScript Frameworks': {
+                description: 'Mastery of popular JavaScript frameworks for building dynamic, interactive web applications with optimal performance.',
+                skills: ['React', 'Vue.js', 'Angular', 'Next.js', 'Nuxt.js', 'Svelte']
+            },
+            'Backend Development': {
+                description: 'Building robust, scalable server-side applications and APIs. Expertise in multiple programming languages and frameworks.',
+                skills: ['Node.js', 'Python', 'Java', 'Express.js', 'Django', 'Spring Boot']
+            },
+            'Database Design': {
+                description: 'Designing efficient database schemas and optimizing query performance. Experience with SQL and NoSQL databases.',
+                skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Database Optimization', 'Data Modeling']
+            },
+            'API Development': {
+                description: 'Creating RESTful and GraphQL APIs that are scalable, secure, and well-documented. API design best practices.',
+                skills: ['REST', 'GraphQL', 'API Documentation', 'Authentication', 'Rate Limiting', 'Microservices']
+            },
+            'System Architecture': {
+                description: 'Designing scalable software architectures. Microservices, distributed systems, and cloud-native solutions.',
+                skills: ['Microservices', 'Docker', 'Kubernetes', 'System Design', 'Load Balancing', 'Scalability']
+            },
+            'Full-Stack Integration': {
+                description: 'Seamlessly connecting frontend and backend systems. End-to-end application development and deployment.',
+                skills: ['API Integration', 'State Management', 'Authentication', 'Testing', 'Performance Optimization']
+            },
+            'DevOps & Cloud': {
+                description: 'Cloud infrastructure management and deployment automation. CI/CD pipelines and monitoring solutions.',
+                skills: ['AWS', 'Azure', 'Docker', 'Jenkins', 'CI/CD', 'Infrastructure as Code']
+            }
+        };
+
+        const constellation = document.getElementById('constellation');
+        let activeCard = null;
+
+        // Scroll control functions
+        function disableScroll() {
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.scrollY}px`;
+            document.body.style.width = '100%';
+        }
+
+        function enableScroll() {
+            const scrollY = document.body.style.top;
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
+
+        // Enhanced star creation with better positioning
+        geminiStars.forEach((star, index) => {
+            const starElement = document.createElement('div');
+            starElement.className = 'star';
+            
+            // Responsive positioning calculation
+            const containerRect = constellation.getBoundingClientRect();
+            const adjustedX = star.x + (Math.sin(index * 0.5) * 2); // Slight organic variation
+            const adjustedY = star.y + (Math.cos(index * 0.7) * 1.5); // Slight organic variation
+            
+            starElement.style.left = `${adjustedX}%`;
+            starElement.style.top = `${adjustedY}%`;
+            starElement.dataset.index = index;
+            starElement.dataset.name = star.name;
+            starElement.title = star.name;
+            
+            // Enhanced click handling
+            starElement.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showExpertiseCard(star, starElement, index);
+            });
+            
+            constellation.appendChild(starElement);
+        });
+
+        // Create constellation lines with staggered animation
+        setTimeout(() => {
+            connections.forEach((connection, index) => {
+                setTimeout(() => {
+                    const [startIndex, endIndex] = connection;
+                    const startStar = geminiStars[startIndex];
+                    const endStar = geminiStars[endIndex];
+                    
+                    const line = document.createElement('div');
+                    line.className = 'constellation-line';
+                    
+                    const deltaX = (endStar.x - startStar.x) * constellation.offsetWidth / 100;
+                    const deltaY = (endStar.y - startStar.y) * constellation.offsetHeight / 100;
+                    const length = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                    const angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
+                    
+                    line.style.left = `${startStar.x}%`;
+                    line.style.top = `${startStar.y}%`;
+                    line.style.width = `${length}px`;
+                    line.style.transform = `rotate(${angle}deg)`;
+                    line.style.animationDelay = `${index * 0.3}s`;
+                    
+                    constellation.appendChild(line);
+                }, index * 300);
+            });
+        }, 1500);
+
+        function showExpertiseCard(star, starElement, starIndex) {
+            // Remove previous card
+            if (activeCard) {
+                closeExpertiseCard();
+                return;
+            }
+
+            // Disable scrolling when card opens
+            disableScroll();
+
+            // Remove active class from all stars
+            document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+            starElement.classList.add('active');
+
+            const expertise = expertiseData[star.name];
+            const card = document.createElement('div');
+            card.className = 'expertise-card';
+            
+            // Advanced positioning algorithm
+            const rect = starElement.getBoundingClientRect();
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            const cardWidth = viewportWidth < 576 ? 240 : viewportWidth < 768 ? 260 : viewportWidth < 992 ? 280 : viewportWidth < 1200 ? 300 : 320;
+            const cardHeight = 450; // Approximate card height
+            
+            let cardX, cardY;
+            
+            // Intelligent positioning based on star location and screen space
+            if (viewportWidth > 768) {
+                // Desktop: Position cards to avoid constellation area entirely
+                const constellationRect = constellation.getBoundingClientRect();
+                const constellationCenterX = constellationRect.left + constellationRect.width / 2;
+                const constellationCenterY = constellationRect.top + constellationRect.height / 2;
+                
+                if (rect.left < constellationCenterX) {
+                    // Star on left half - place card on far right
+                    cardX = Math.max(constellationRect.right + 20, viewportWidth - cardWidth - 20);
+                    if (cardX + cardWidth > viewportWidth) {
+                        cardX = 20; // Fallback to left if no space on right
+                    }
+                } else {
+                    // Star on right half - place card on far left
+                    cardX = Math.max(20, constellationRect.left - cardWidth - 20);
+                    if (cardX < 0) {
+                        cardX = viewportWidth - cardWidth - 20; // Fallback to right if no space on left
+                    }
+                }
+                
+                // Vertical centering with bounds checking
+                cardY = Math.max(20, Math.min(
+                    constellationCenterY - cardHeight / 2,
+                    viewportHeight - cardHeight - 20
+                ));
+            } else {
+                // Mobile: Center card with safe margins
+                cardX = Math.max(10, (viewportWidth - cardWidth) / 2);
+                cardY = Math.max(20, (viewportHeight - cardHeight) / 2);
+            }
+            
+            card.style.left = `${cardX}px`;
+            card.style.top = `${cardY}px`;
+            
+            card.innerHTML = `
+                <div class="close-btn" onclick="closeExpertiseCard()">&times;</div>
+                <h3>
+                    <span class="icon">${star.icon}</span>
+                    ${star.name}
+                </h3>
+                <p>${expertise.description}</p>
+                <div class="skills">
+                    ${expertise.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                </div>
+                <a href="#" class="learn-more" onclick="event.preventDefault();">Explore Projects</a>
+            `;
+            
+            document.body.appendChild(card);
+            activeCard = card;
+            
+            // Smooth entrance animation
+            requestAnimationFrame(() => {
+                card.classList.add('visible');
+            });
+        }
+
+        function closeExpertiseCard() {
+            if (activeCard) {
+                activeCard.classList.remove('visible');
+                
+                setTimeout(() => {
+                    if (activeCard) {
+                        activeCard.remove();
+                        activeCard = null;
+                    }
+                    // Re-enable scrolling when card closes
+                    enableScroll();
+                }, 300);
+            }
+            
+            // Remove active class from all stars
+            document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+        }
+
+        // Enhanced event listeners with scroll control
+        document.addEventListener('click', (e) => {
+            if (activeCard && !activeCard.contains(e.target) && !e.target.classList.contains('star')) {
+                closeExpertiseCard();
+            }
+        });
+
+        // Close card with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && activeCard) {
+                closeExpertiseCard();
+            }
+        });
+
+        // Handle resize events to reposition cards
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                if (activeCard) {
+                    // Reposition active card on resize
+                    const activeStarIndex = document.querySelector('.star.active')?.dataset.index;
+                    if (activeStarIndex !== undefined) {
+                        const star = geminiStars[activeStarIndex];
+                        const starElement = document.querySelector(`.star[data-index="${activeStarIndex}"]`);
+                        if (star && starElement) {
+                            closeExpertiseCard();
+                            setTimeout(() => {
+                                showExpertiseCard(star, starElement, parseInt(activeStarIndex));
+                            }, 100);
+                        }
+                    }
+                }
+            }, 250);
+        });
+
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 25 + 's';
+                particle.style.animationDuration = (Math.random() * 15 + 15) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize
+        function initializeServices() {
+            createParticles();
+            
+            setTimeout(() => {
+                const firstStar = document.querySelector('.star');
+                if (firstStar) {
+                    firstStar.click();
+                }
+            }, 4000);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeServices);
+        } else {
+            initializeServices();
+        }
+    </script>
+
+
+
+
+    <!-- script for photo frame-->
+     <script>
+        // Matrix background effect
+        function createMatrixEffect() {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.pointerEvents = 'none';
+            canvas.style.opacity = '0.1';
+            canvas.style.zIndex = '-1';
+            
+            document.getElementById('matrixBg').appendChild(canvas);
+            
+            const binary = '01';
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            const drops = Array(Math.floor(columns)).fill(1);
+            
+            function drawMatrix() {
+                ctx.fillStyle = 'rgba(1, 2, 27, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = 'rgb(23, 238, 177)';
+                ctx.font = fontSize + 'px monospace';
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const text = binary[Math.floor(Math.random() * binary.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+            
+            setInterval(drawMatrix, 50);
+        }
+        
+        // Create data particles
+        function createDataParticles() {
+            const stream = document.getElementById('dataStream');
+            
+            function addParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'data-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                stream.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 4000);
+            }
+            
+            setInterval(addParticle, 300);
+        }
+        
+        function loadImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const placeholder = document.getElementById('photoPlaceholder');
+                    placeholder.innerHTML = `<img src="${e.target.result}" alt="Secure Profile" class="photo-image">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Click to edit name with cybersecurity flair
+        document.getElementById('nameText').addEventListener('click', function() {
+            const currentName = this.textContent;
+            const newName = prompt('Enter Agent Designation:', currentName);
+            if (newName && newName.trim()) {
+                this.textContent = newName.trim().toUpperCase();
+            }
+        });
+
+        // Initialize effects
+        createMatrixEffect();
+        createDataParticles();
+        
+        // Add glitch effect on hover
+        document.querySelector('.photo-frame').addEventListener('mouseenter', function() {
+            this.style.animation = 'glitch 0.3s ease-in-out';
+        });
+        
+        document.querySelector('.photo-frame').addEventListener('mouseleave', function() {
+            this.style.animation = '';
+        });
+        
+        // Add glitch keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes glitch {
+                0%, 100% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg); }
+                20% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(2px); }
+                40% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(-2px); }
+                60% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(2px); }
+                80% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(-2px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
