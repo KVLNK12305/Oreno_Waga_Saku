@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="model.css">
     <title>Portfolio</title>
     <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
-    <script src="services.js"></script>
+    <script src="https://kit.fontawesome.com/835cdeafad.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
@@ -16,7 +16,7 @@
                 <ul id="menu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#services">Arsenal</a></li>
                     <li><a href="#portfolio">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <i class="fa-solid fa-xmark" id="cls"onclick="hide()"></i>
@@ -58,7 +58,7 @@
 
     <div class="photo-container">
         <div class="photo-placeholder" id="photoPlaceholder">
-            <span>► UPLOAD_SECURE_IMAGE<span class="typing-effect">_</span></span>
+            <span> <span class="typing-effect"></span></span>
         </div>
 
         <!-- REMOVE the original upload click area from others -->
@@ -69,7 +69,7 @@
     </div>
 
     <div class="status-bar">
-        <span id="nameText">AGENT_NAME_HERE</span>
+        <span id="nameText">KVLNK</span>
     </div>
 </div>
 
@@ -92,14 +92,14 @@
                     
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span style="font-size: 30px;">UI/UX</span><br>Designing Web interfaces</li>
-                            <li><span style="font-size: 30px;">Coder</span><br>Object-Oriented Programming:<br>Python, Java</li>
+                            <li><span style="font-size: 30px;">Technical</span><br>Niche for Cybersecurity, Video Editing, Beginner in Debigging, OSC's</li>
+                            <li><span style="font-size: 30px;">Programming Languages</span><br>Java, Python, C, Rust, Dart, C++</li>
                         </ul>
                     </div>
                     
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <li><span style="font-size: 30px;">Further More</span><br>Very Soon..</li>
+                            <li><span style="font-size: 30px;">Dec 2024 - May 2025</span><br>Member of the Live in Labs® (team Sustainovators)</li>
                         </ul>
                     </div>
                     
@@ -120,12 +120,47 @@
     <!-- portfolio -->
     <div id="portfolio">
         <div class="container">
-            <h1 class="sub-title"><span>My Projects</span></h1>
-            <div class="worklist">
-                <div class="work"><img src="" alt=""><div class="layer"><h3>LuxeRide rentals</h3></div></div>
-                <div class="work"><img src="" alt=""></div>
+            <h1 class="sub-title"><span>My ProJects</span></h1>
+            <div class="project-container" id="projectContainer">
+        <div class="project-header">
+            <h2 class="project-title">Task Management App</h2>
+            <p class="project-subtitle">Full-stack web application</p>
+            <div class="expand-indicator">▼</div>
+        </div>
+        
+        <div class="project-details">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Task Management Dashboard" />
             </div>
-            <a href="" class="btn">See more</a>
+            
+            <div class="project-description">
+                A comprehensive task management application built with modern web technologies. Features real-time collaboration, intuitive drag-and-drop interface, and advanced filtering options to help teams stay organized and productive.
+            </div>
+            
+            <div class="tools-section">
+                <h3 class="tools-title">Technologies Used</h3>
+                <div class="tools-grid">
+                    <button class="tool-button" onclick="showToolInfo('React')">React</button>
+                    <button class="tool-button" onclick="showToolInfo('Node.js')">Node.js</button>
+                    <button class="tool-button" onclick="showToolInfo('MongoDB')">MongoDB</button>
+                    <button class="tool-button" onclick="showToolInfo('Express')">Express</button>
+                    <button class="tool-button" onclick="showToolInfo('Socket.io')">Socket.io</button>
+                    <button class="tool-button" onclick="showToolInfo('Tailwind')">Tailwind</button>
+                </div>
+            </div>
+            
+            <div class="features-section">
+                <h3 class="features-title">Key Features</h3>
+                <div class="features-list">
+                    <span class="feature-tag">Real-time Updates</span>
+                    <span class="feature-tag">Team Collaboration</span>
+                    <span class="feature-tag">Task Prioritization</span>
+                    <span class="feature-tag">Progress Tracking</span>
+                    <span class="feature-tag">File Attachments</span>
+                </div>
+            </div>
+        </div>
+            </div>
         </div>
     </div>
     <!-- contact-->
@@ -173,6 +208,8 @@
             document.getElementById(tabname).classList.add("active-tab");
         }
     </script>
+
+    
     <script>
         var meu=document.getElementById("menu") 
         function show(){
@@ -182,6 +219,33 @@
             meu.style.right="-200px";
         }
     </script>
+
+
+
+    <script>
+        // PROJECT JS 
+        const projectContainer = document.getElementById('projectContainer');
+        
+        projectContainer.addEventListener('click', function() {
+            this.classList.toggle('expanded');
+        });
+
+        function showToolInfo(toolName) {
+            event.stopPropagation(); // Prevent container click
+            
+            const toolInfo = {
+                'React': 'Frontend library for building user interfaces',
+                'Node.js': 'JavaScript runtime for server-side development',
+                'MongoDB': 'NoSQL database for flexible data storage',
+                'Express': 'Web framework for Node.js applications',
+                'Socket.io': 'Real-time communication library',
+                'Tailwind': 'Utility-first CSS framework'
+            };
+            
+            alert(`${toolName}: ${toolInfo[toolName]}`);
+        }
+    </script>
+
     <script>
         // Improved Gemini constellation layout with better alignment
         const geminiStars = [
@@ -506,8 +570,13 @@
         function createMatrixEffect() {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            
+            resizeCanvas();
             canvas.style.position = 'fixed';
             canvas.style.top = '0';
             canvas.style.left = '0';
@@ -518,9 +587,9 @@
             document.getElementById('matrixBg').appendChild(canvas);
 
             const binary = '01';
-            const fontSize = 14;
-            const columns = canvas.width / fontSize;
-            const drops = Array(Math.floor(columns)).fill(1);
+            let fontSize = window.innerWidth < 768 ? 10 : 14;
+            let columns = canvas.width / fontSize;
+            let drops = Array(Math.floor(columns)).fill(1);
 
             function drawMatrix() {
                 ctx.fillStyle = 'rgba(1, 2, 27, 0.05)';
@@ -540,12 +609,21 @@
                 }
             }
 
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                resizeCanvas();
+                fontSize = window.innerWidth < 768 ? 10 : 14;
+                columns = canvas.width / fontSize;
+                drops = Array(Math.floor(columns)).fill(1);
+            });
+
             setInterval(drawMatrix, 50);
         }
 
         // Create data particles
         function createDataParticles() {
             const stream = document.getElementById('dataStream');
+            if (!stream) return;
 
             function addParticle() {
                 const particle = document.createElement('div');
@@ -561,52 +639,35 @@
                 }, 4000);
             }
 
-            setInterval(addParticle, 300);
+            // Adjust particle frequency based on screen size
+            const particleInterval = window.innerWidth < 768 ? 500 : 300;
+            setInterval(addParticle, particleInterval);
         }
-
-        // Load and preview image (only allowed by secret key)
-        function loadImage(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const placeholder = document.getElementById('photoPlaceholder');
-                    placeholder.innerHTML = `<img src="${e.target.result}" alt="Secure Profile" class="photo-image">`;
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        // Secret key shortcut to trigger file input
-        document.addEventListener('keydown', function (e) {
-            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'u') {
-                const pass = prompt("Enter upload passphrase:");
-                if (pass === "kls2_secret_code") { // Replace with your actual secret
-                    document.getElementById('uploadInput').click();
-                } else {
-                    alert("Unauthorized Access");
-                }
-            }
-        });
 
         // Editable name with flair
-        document.getElementById('nameText').addEventListener('click', function () {
-            const currentName = this.textContent;
-            const newName = prompt('Enter Agent Designation:', currentName);
-            if (newName && newName.trim()) {
-                this.textContent = newName.trim().toUpperCase();
-            }
-        });
+        const nameElement = document.getElementById('nameText');
+        if (nameElement) {
+            nameElement.addEventListener('click', function () {
+                const currentName = this.textContent;
+                const newName = prompt('Enter Agent Designation:', currentName);
+                if (newName && newName.trim()) {
+                    this.textContent = newName.trim().toUpperCase();
+                }
+            });
+        }
 
         // Glitch hover effect
-        document.querySelector('.photo-frame').addEventListener('mouseenter', function () {
-            this.style.animation = 'glitch 0.3s ease-in-out';
-        });
-        document.querySelector('.photo-frame').addEventListener('mouseleave', function () {
-            this.style.animation = '';
-        });
+        const photoFrame = document.querySelector('.photo-frame');
+        if (photoFrame) {
+            photoFrame.addEventListener('mouseenter', function () {
+                this.style.animation = 'glitch 0.3s ease-in-out';
+            });
+            photoFrame.addEventListener('mouseleave', function () {
+                this.style.animation = '';
+            });
+        }
 
-        // Inject glitch keyframes
+        // Inject glitch keyframes with responsive adjustments
         const style = document.createElement('style');
         style.textContent = `
             @keyframes glitch {
@@ -616,40 +677,29 @@
                 60% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(2px); }
                 80% { transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(-2px); }
             }
+            
+            @media (max-width: 768px) {
+                @keyframes glitch {
+                    0%, 100% { transform: perspective(500px) rotateX(3deg) rotateY(-3deg); }
+                    20% { transform: perspective(500px) rotateX(3deg) rotateY(-3deg) translateX(1px); }
+                    40% { transform: perspective(500px) rotateX(3deg) rotateY(-3deg) translateX(-1px); }
+                    60% { transform: perspective(500px) rotateX(3deg) rotateY(-3deg) translateX(1px); }
+                    80% { transform: perspective(500px) rotateX(3deg) rotateY(-3deg) translateX(-1px); }
+                }
+            }
         `;
         document.head.appendChild(style);
+
+        // Performance optimization for mobile
+        const isMobile = window.innerWidth < 768;
+        
+        // Throttle resize events
+       
 
         // Initialize visuals
         createMatrixEffect();
         createDataParticles();
 
-    </script>
-    <script>
-        // Load selected image into placeholder
-        function loadImage(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const placeholder = document.getElementById('photoPlaceholder');
-                    placeholder.innerHTML = `<img src="${e.target.result}" alt="Secure Profile" class="photo-image">`;
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        // Ctrl + Shift + U to trigger secure upload
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'u') {
-                const pass = prompt("Enter Secure Upload Passphrase:");
-                if (pass === "kls2_secret_code") { // Change this passphrase
-                    document.getElementById('fileInput').click();
-                } else {
-                    alert("Access Denied.");
-                }
-            }
-        });
-
-    </script>
+</script>
 </body>
 </html>
