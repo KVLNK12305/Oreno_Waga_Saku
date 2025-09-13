@@ -1,38 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
-/* ✨ Tell Tailwind where to inject layers first */
+/* ✨ Tell Tailwind where to inject layers */
 @layer base {
   :root {
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    /* 2. Define colors and fonts as CSS variables for easy theming */
+    --font-primary: 'Sora', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    
+    /* Dark Theme Colors (default) */
+    --color-text: #D4D4D4; /* A softer white for better readability */
+    --color-heading: #FFD700; /* Gold for main headings */
+    --color-background: #08080E; /* Dark Charcoal */
+    --color-accent: #A855F7; /* Violet */
+    --color-button-bg: #2C2C3A;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      /* 3. Redefine variables for Light Theme */
+      --color-text: #213547;
+      --color-heading: #1a1a1a;
+      --color-background: #ffffff;
+      --color-accent: #535bf2;
+      --color-button-bg: #f9f9f9;
+    }
+  }
+
+  /* Apply the base styles using variables */
+  body {
+    font-family: var(--font-primary);
     line-height: 1.5;
     font-weight: 400;
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    
+    color: var(--color-text);
+    background-color: var(--color-background);
+
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-  }
-  a:hover {
-    color: #535bf2;
-  }
-
-  body {
-    margin: 0;
-    min-width: 320px;
-    min-height: 100vh;
+  h1, h2, h3 {
+    color: var(--color-heading);
   }
 
   h1 {
     font-size: 3.2em;
     line-height: 1.1;
+  }
+
+  a {
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: inherit;
+    transition: color 0.2s ease-in-out; /* 4. Smoother transition */
+  }
+  a:hover {
+    color: var(--color-heading);
   }
 
   button {
@@ -42,28 +71,53 @@
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
+    color: var(--color-text); /* Ensure button text is readable */
+    background-color: var(--color-button-bg);
     cursor: pointer;
     transition: border-color 0.25s;
   }
   button:hover {
-    border-color: #646cff;
+    border-color: var(--color-accent);
   }
   button:focus,
   button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
 
-  @media (prefers-color-scheme: light) {
-    :root {
-      color: #213547;
-      background-color: #ffffff;
+  .shine-text {
+    /* Define the gradient that will act as the "shine" */
+    background-image: linear-gradient(
+      90deg,
+      var(--color-heading) 0%, /* Start with the base gold color */
+      #FFF6A3 50%,        /* A brighter, lighter gold for the "shine" highlight */
+      var(--color-heading) 100% /* End with the base gold color */
+    );
+    
+    /* Set the background size and position. The width is important for the animation. */
+    background-size: 200% auto;
+    background-position: 0% 50%;
+    
+    /* Clip the background to the text and make the text transparent */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Apply the animation */
+    animation: shine 3s linear infinite;
+  }
+
+  /* Define the animation keyframes */
+  @keyframes shine {
+    to {
+      background-position: -200% 50%;
     }
-    a:hover {
-      color: #747bff;
-    }
-    button {
-      background-color: #f9f9f9;
-    }
+  }
+
+  /* You can apply this class to any heading you want to animate */
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+    /* Remove the color variable here since we're using a gradient */
+    color: initial; 
   }
 }
