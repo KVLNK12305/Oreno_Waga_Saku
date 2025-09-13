@@ -2,7 +2,7 @@ import React from 'react';
 
 const Main_story = () => (
     <section id="home" className="min-h-screen flex items-center justify-start px-6">
-        <div className="max-w-4xl container mx-auto">
+        <div className="max-w-4xl container mx-auto bg-red">
             <h2 className="text-lg md:text-xl text-gold font-mono mb-4">Greetings, I am</h2>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-light-slate mb-4 tracking-wider">
                 KURAPATI VENKATA LAKSHMI NARASIMHA KUSHAL.
