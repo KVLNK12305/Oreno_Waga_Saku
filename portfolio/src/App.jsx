@@ -2,11 +2,12 @@ import React from "react";
 import Land_page from "./components/Land_page";
 
 // Section imports (you’ll create these later)
-import TechnicalSkills from "./components/FoE";
+import FoE from "./components/FoE";
 import Projects from "./components/Projects";
-import Certs_n_expr from "./components/certs_experience";
-import Contact from "./components/climax";
-import Timeline from "./components/Edtimeline";
+import CertsExperience from "./components/certs_experience";
+import Climax from "./components/climax";
+import EdTimeline from "./components/Edtimeline";
+import Land_page from "./components/Land_page";
 
 function App() {
   return (
@@ -14,11 +15,11 @@ function App() {
       <Land_page />
       <main className="container mx-auto px-6">
         <Land_page />
-        <TechnicalSkills />
-        <Timeline />
+        <FoE />
+        <EdTimeline />
         <Projects />
-        <Certs_n_expr />
-        <Contact />
+        <CertsExperience />
+        <Climax />
       </main>
       
     </div>
