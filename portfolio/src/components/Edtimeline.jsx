@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EdTimeline = () => {
+const Ed_Timeline = () => {
     const timelineData = [
         {
             year: "2022 - 2026",
@@ -44,4 +44,4 @@ const EdTimeline = () => {
     );
 };
 
-export default EdTimeline;
+export default Ed_Timeline;

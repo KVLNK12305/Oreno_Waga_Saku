@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Land_page = () => (
+const Main_story = () => (
     <section id="home" className="min-h-screen flex items-center justify-start px-6">
         <div className="max-w-4xl container mx-auto">
             <h2 className="text-lg md:text-xl text-gold font-mono mb-4">Greetings, I am</h2>
@@ -24,4 +24,4 @@ const Land_page = () => (
     </section>
 );
 
-export default Land_page;
+export default Main_story;

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const FoE = () => {
+const Arsenal = () => {
     const skillCategories = {
         "Programming Languages": ["Python", "Java", "C++", "Rust", "JavaScript", "C"],
         "Frontend": ["HTML", "CSS", "React.js", "Next.js", "Tailwind CSS"],
@@ -147,4 +147,4 @@ const FoE = () => {
     );
 };
 
-export default FoE;
+export default Arsenal;
