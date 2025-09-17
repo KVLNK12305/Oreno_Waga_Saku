@@ -1,4 +1,4 @@
-package Arrays;
+package arrays;
 import java.util.*;
 class Maximum_Product_Subarray {
     int maxProduct(int[] arr) {
