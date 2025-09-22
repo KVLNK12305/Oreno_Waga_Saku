@@ -1,0 +1,15 @@
+{
+  "canisters": {
+    "canister_a": {
+      "package": "canister_a",
+      "candid": "src/canister_a/canister_a.did",
+      "type": "rust"
+    },
+    "canister_b": {
+      "package": "canister_b",
+      "candid": "src/canister_b/canister_b.did",
+      "type": "rust"
+    }
+  },
+  "version": 1
+}
